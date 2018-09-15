@@ -1,5 +1,7 @@
 package com.lotto.lotto.repository;
 
+import com.lotto.lotto.model.Account;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -14,4 +16,15 @@ public class AccountRepositoryTest {
     @Autowired
     private AccountRepository accountRepository;
 
+    @Test
+    public void createNewAccount() {
+        Account newAccount = new Account();
+        newAccount.setUsreName("Warakorn");
+        newAccount.setPassword("Neung");
+        newAccount.setSalary(100);
+        Account actualAccount = accountRepository.save(newAccount);
+
+        assertEquals(1, actualAccount.getId());
+        assertEquals(1, accountRepository.count());
+    }
 }
