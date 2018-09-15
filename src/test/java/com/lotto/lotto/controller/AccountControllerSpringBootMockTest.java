@@ -33,7 +33,7 @@ public class AccountControllerSpringBootMockTest {
         MockHttpServletResponse response = mockMvc.perform(
                 get("/account/1").accept(MediaType.APPLICATION_JSON)
         ).andReturn().getResponse();
-        assertEquals(HttpStatus.OK.value(), response.getStatus());
+        assertEquals("Ouch! an error has occurred",300, response.getStatus());
         AccountResponse expected = new AccountResponse("user","pass", 1000);
         assertEquals(jsonTester.write(expected).getJson(), response.getContentAsString());
     }
