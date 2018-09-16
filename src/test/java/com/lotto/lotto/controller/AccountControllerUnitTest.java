@@ -1,10 +1,13 @@
 package com.lotto.lotto.controller;
 
+import com.lotto.lotto.category.IntegrationTest;
+import com.lotto.lotto.category.UnitTest;
 import com.lotto.lotto.controller.response.AccountResponse;
 import com.lotto.lotto.model.Account;
 import com.lotto.lotto.repository.AccountRepository;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.mockito.Mock;
 
 import java.util.Optional;
@@ -13,6 +16,7 @@ import static org.junit.Assert.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+@Category(UnitTest.class)
 public class AccountControllerUnitTest {
 
     @Mock

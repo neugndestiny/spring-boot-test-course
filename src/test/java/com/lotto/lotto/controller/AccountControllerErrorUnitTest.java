@@ -1,5 +1,7 @@
 package com.lotto.lotto.controller;
 
+import com.lotto.lotto.category.SlicingTest;
+import com.lotto.lotto.category.UnitTest;
 import com.lotto.lotto.controller.response.AccountResponse;
 import com.lotto.lotto.exception.MyAccountNotFoundException;
 import com.lotto.lotto.model.Account;
@@ -7,6 +9,7 @@ import com.lotto.lotto.repository.AccountRepository;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
 
@@ -17,6 +20,7 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+@Category(UnitTest.class)
 public class AccountControllerErrorUnitTest {
 
     @Mock

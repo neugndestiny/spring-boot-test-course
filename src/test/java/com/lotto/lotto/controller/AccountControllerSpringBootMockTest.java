@@ -1,10 +1,13 @@
 package com.lotto.lotto.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lotto.lotto.category.IntegrationTest;
+import com.lotto.lotto.category.SlicingTest;
 import com.lotto.lotto.controller.response.AccountResponse;
 import com.lotto.lotto.model.Account;
 import com.lotto.lotto.repository.AccountRepository;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -26,6 +29,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
+@Category(IntegrationTest.class)
 public class AccountControllerSpringBootMockTest {
 
     @Autowired
