@@ -30,16 +30,10 @@ public class AccountControllerErrorUnitTest {
     @Test(expected = MyAccountNotFoundException.class)
     public void getByIdWithException() {
         // Stub
-        Account account = new Account();
-        account.setUsreName("user");
-        account.setPassword("pass");
-        account.setSalary(1000);
-        given(repository.findById(1))
-                .willReturn(Optional.of(account));
+        given(repository.findById(2))
+                .willReturn(Optional.empty());
 
         accountController = new AccountController(repository);
-        AccountResponse response = accountController.getById(1);
-        AccountResponse exptected = new AccountResponse("user", "pass", 1000);
-        assertEquals(exptected, response);
+        AccountResponse response = accountController.getById(2);
     }
 }
