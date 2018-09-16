@@ -40,8 +40,9 @@ public class AccountController {
     @PostConstruct
     public void initData() {
         Account account = new Account();
+        account.setId(1);
         account.setUsreName("Neung");
-        account.setPassword("This is the password don't tell anyone");
+        account.setPassword("pass");
         accountRepository.save(account);
     }
 }

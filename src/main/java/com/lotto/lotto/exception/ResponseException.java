@@ -6,6 +6,8 @@ public class ResponseException {
     private String message;
     private Date date = new Date(System.currentTimeMillis());
 
+    public ResponseException(){}
+
     public ResponseException(String message) {
         this.message = message;
     }
